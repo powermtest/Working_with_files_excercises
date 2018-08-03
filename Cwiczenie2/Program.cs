@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Text;
 
 namespace Cwiczenie2
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             //Write a program that reads a text file and displays the longest word in the file.
             var path = @"C:\temp\12\test.txt";
@@ -28,20 +25,17 @@ namespace Cwiczenie2
                     dlugoscSlowa++;
                     continue;
                 }
-                
+
                 if (dlugoscSlowa > maxDlugoscSlowa)
                 {
                     maxDlugoscSlowa = dlugoscSlowa;
                     najdluzszeSlowo = slowo.ToString();
-
                 }
                 dlugoscSlowa = 0;
                 slowo.Clear();
-
             }
-            Console.WriteLine("Pierwsze, najdłuższe znalezione słowo to: >>" + najdluzszeSlowo + "<<, składa się ono z "+ maxDlugoscSlowa+ " znaków.");
-
-
+            Console.WriteLine("Pierwsze, najdłuższe znalezione słowo to: >>" + najdluzszeSlowo +
+                              "<<, składa się ono z " + maxDlugoscSlowa + " znaków.");
         }
     }
 }
